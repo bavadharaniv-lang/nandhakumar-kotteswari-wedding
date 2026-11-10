@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+..<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,20 +8,20 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Alex+Brush&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --bg-cream: #fbf6ee;
-      --card-cream: #f4ece1;
+      --bg-cream: #faf5ec;
+      --card-cream: #f3eae0;
       --brown-text: #4a2c11;
       --gold-accent: #c59b27;
       --brown-btn: #5c3818;
       --font-serif: 'Cormorant Garamond', serif;
-      --font-script: 'Great Vibes', cursive;
+      --font-calligraphy: 'Alex Brush', cursive;
       --font-sans: 'Montserrat', sans-serif;
     }
 
@@ -32,7 +32,7 @@
     }
 
     body {
-      background-color: #e5dec9;
+      background-color: #dfd5c2;
       font-family: var(--font-sans);
       color: var(--brown-text);
       display: flex;
@@ -59,16 +59,68 @@
       font-size: 1.1rem;
     }
 
-    /* Main Container */
+    /* Falling Petals Effect */
+    #petal-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 2500;
+    }
+
+    .petal {
+      position: absolute;
+      top: -20px;
+      background: #ffb7c5;
+      border-radius: 150% 0 150% 0;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-5vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main App Container with Temple Artwork Frame */
     .app-container {
       width: 100%;
       max-width: 480px;
-      background: var(--bg-cream);
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(circle at top, rgba(255,255,255,0.7), rgba(250,245,236,0.95)),
+        url('https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&q=80&w=800');
+      background-size: cover;
+      background-position: center;
       min-height: 100vh;
       box-shadow: 0 0 30px rgba(0,0,0,0.15);
       position: relative;
       padding-bottom: 50px;
       overflow: hidden;
+    }
+
+    /* Decorative Temple Frame Borders */
+    .app-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 12px solid transparent;
+      border-image: linear-gradient(to bottom, #d4a753, #5c3818) 1;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0.3;
     }
 
     /* ================= ENVELOPE OPENING SCREEN ================= */
@@ -78,7 +130,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: #eee6d8;
+      background: #e8decb;
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -114,13 +166,25 @@
       border-bottom: 1px solid #e2d7c5;
     }
 
-    .monogram {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 600;
+    /* Monogram styled like elegant AK Flourish Logo */
+    .monogram-logo {
+      font-family: var(--font-calligraphy);
+      font-size: 3.8rem;
       color: var(--brown-text);
-      letter-spacing: -2px;
-      margin-bottom: 15px;
+      line-height: 0.9;
+      margin-bottom: 10px;
+      display: inline-block;
+      position: relative;
+    }
+    .monogram-logo::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background: radial-gradient(circle, var(--brown-text) 0%, transparent 100%);
+      border-radius: 50%;
     }
 
     .couple-names-cover {
@@ -196,20 +260,14 @@
     section {
       padding: 35px 20px;
       text-align: center;
-    }
-
-    .monogram-main {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--brown-text);
-      letter-spacing: -2px;
+      position: relative;
+      z-index: 2;
     }
 
     .quote-box {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: #614328;
       margin: 15px 0 25px;
       line-height: 1.6;
@@ -218,20 +276,20 @@
     .couple-title {
       font-family: var(--font-serif);
       color: var(--brown-text);
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       line-height: 1.2;
     }
 
     .weds-script {
-      font-family: var(--font-script);
-      font-size: 2rem;
+      font-family: var(--font-calligraphy);
+      font-size: 2.5rem;
       color: var(--gold-accent);
-      margin: 8px 0;
+      margin: 4px 0;
     }
 
     /* Countdown Pill */
     .countdown-pill {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid #e0d5c3;
       padding: 10px 20px;
       border-radius: 30px;
@@ -269,7 +327,7 @@
     }
 
     .event-card {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid #e8decb;
       border-radius: 12px;
       padding: 25px 20px;
@@ -290,7 +348,7 @@
       line-height: 1.8;
     }
 
-    /* ================= AUTO SCROLL CAROUSEL ================= */
+    /* Auto Scroll Carousel */
     .carousel-wrapper {
       position: relative;
       width: 100%;
@@ -345,9 +403,9 @@
       transform: scale(1.3);
     }
 
-    /* Calendar Box */
+    /* Calendar Box with Red Heart Highlight */
     .calendar-box {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid #e8decb;
       border-radius: 12px;
       padding: 20px 15px;
@@ -371,16 +429,22 @@
 
     .calendar-grid div { padding: 6px 0; }
     .calendar-grid .day-name { font-weight: 600; color: #8c6d53; }
-    .calendar-grid .selected-day {
-      background: var(--brown-btn);
+    
+    /* Red Heart Shape for December 10 */
+    .calendar-grid .selected-day-heart {
+      background: #e63946;
       color: #ffffff;
-      border-radius: 50%;
+      clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
+      transform: scale(1.2);
     }
 
     /* Form Fields */
     .form-card {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid #e8decb;
       border-radius: 12px;
       padding: 25px 20px;
@@ -437,6 +501,9 @@
 </head>
 <body>
 
+  <!-- Petals Overlay -->
+  <div id="petal-container"></div>
+
   <!-- Audio Player -->
   <audio id="bg-audio" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
@@ -451,7 +518,7 @@
   <div id="envelope-screen">
     <div class="envelope-card">
       <div class="envelope-flap">
-        <div class="monogram">KN</div>
+        <div class="monogram-logo">KN</div>
         <div class="couple-names-cover">
           Kotteswari
           <span>AND</span>
@@ -465,7 +532,7 @@
       </div>
 
       <div class="envelope-bottom">
-        <div class="invite-text-cover">INVITE YOU TO CELEBRATION<br>OUR WEDDING DAY</div>
+        <div class="invite-text-cover">INVITE YOU TO CELEBRATE<br>OUR WEDDING DAY</div>
         <div class="leaf-illustration">🌿</div>
       </div>
     </div>
@@ -476,8 +543,8 @@
 
     <!-- Header Section -->
     <section>
-      <div class="monogram-main">KN</div>
-      <p class="quote-box">"Three sacred knots, one for love, one for trust, and one for a lifetime of togetherness."</p>
+      <div class="monogram-logo">KN</div>
+      <p class="quote-box">"The universe was quietly working on this."</p>
 
       <h1 class="couple-title">Kotteswari</h1>
       <div class="weds-script">Weds</div>
@@ -493,7 +560,7 @@
     </section>
 
     <!-- Invitation Message -->
-    <section style="background-color: var(--card-cream);">
+    <section style="background-color: rgba(244, 236, 224, 0.85);">
       <p style="font-size: 0.8rem; letter-spacing: 2px; color: #8c6d53; text-transform: uppercase;">WITH THE BLESSINGS OF OUR FAMILIES</p>
       <p style="font-size: 0.95rem; margin-top: 8px; color: var(--brown-text);">With joyful hearts, we invite you to celebrate our wedding.</p>
 
@@ -529,14 +596,10 @@
           <div class="gallery-item">
             <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600" alt="Moment 5">
           </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Moment 6">
-          </div>
         </div>
 
         <div class="carousel-dots" id="carouselDots">
           <div class="dot active"></div>
-          <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
@@ -546,7 +609,7 @@
     </section>
 
     <!-- Events Section -->
-    <section style="background-color: var(--card-cream);">
+    <section style="background-color: rgba(244, 236, 224, 0.85);">
       <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 20px;">Wedding Events</h2>
 
       <!-- Reception -->
@@ -574,7 +637,7 @@
           <div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div><div class="day-name">Su</div>
           
           <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-          <div>7</div><div>8</div><div>9</div><div class="selected-day">10</div><div>11</div><div>12</div><div>13</div>
+          <div>7</div><div>8</div><div>9</div><div class="selected-day-heart">10</div><div>11</div><div>12</div><div>13</div>
           <div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
           <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
           <div>28</div><div>29</div><div>30</div><div>31</div>
@@ -598,7 +661,7 @@
     </section>
 
     <!-- Venue Location Section -->
-    <section style="background-color: var(--card-cream);">
+    <section style="background-color: rgba(244, 236, 224, 0.85);">
       <h2 style="font-family: var(--font-serif); font-size: 2rem;">Venue Location</h2>
       <h3 style="font-family: var(--font-serif); color: var(--gold-accent); margin-top: 10px;">GRK MANDAPAM</h3>
       <p style="font-size: 0.9rem; color: #614328;">Guduvanchery</p>
@@ -631,11 +694,36 @@
   <script>
     const audio = document.getElementById('bg-audio');
 
-    // Open Envelope Function
+    // Open Envelope & Trigger Petal Burst Animation
     function openEnvelope() {
       document.getElementById('envelope-screen').classList.add('opened');
+      createPetalShower();
       audio.play().catch(() => {});
       window.scrollTo(0, 0);
+    }
+
+    // Floral Petal Animation Generator
+    function createPetalShower() {
+      const container = document.getElementById('petal-container');
+      const colors = ['#ffb7c5', '#ff9aa2', '#ffdac1', '#e27d60', '#f4acb7'];
+      
+      for (let i = 0; i < 40; i++) {
+        setTimeout(() => {
+          const petal = document.createElement('div');
+          petal.className = 'petal';
+          
+          const size = Math.random() * 12 + 8;
+          petal.style.width = `${size}px`;
+          petal.style.height = `${size * 1.4}px`;
+          petal.style.left = `${Math.random() * 100}vw`;
+          petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+          petal.style.animationDuration = `${Math.random() * 3 + 3.5}s`;
+          
+          container.appendChild(petal);
+
+          setTimeout(() => petal.remove(), 7000);
+        }, i * 120);
+      }
     }
 
     // Toggle Music
@@ -655,19 +743,17 @@
 
     function autoScrollGallery() {
       currentIndex = (currentIndex + 1) % totalItems;
-      const itemWidth = carousel.querySelector('.gallery-item').offsetWidth + 15; // Width + gap
+      const itemWidth = carousel.querySelector('.gallery-item').offsetWidth + 15;
       carousel.scrollTo({
         left: itemWidth * currentIndex,
         behavior: 'smooth'
       });
 
-      // Update dots
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentIndex);
       });
     }
 
-    // Auto-scroll every 3 seconds
     setInterval(autoScrollGallery, 3000);
 
     // Live Countdown Timer
@@ -679,38 +765,4 @@
       if (distance < 0) distance = 0;
 
       document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // Form Submissions
-    function handleRSVP(e) {
-      e.preventDefault();
-      const name = document.getElementById('guestName').value;
-      alert(`Thank you, ${name}! Your RSVP has been confirmed.`);
-      e.target.reset();
-    }
-
-    function addWish(e) {
-      e.preventDefault();
-      const name = document.getElementById('wishName').value;
-      const text = document.getElementById('wishText').value;
-      
-      const container = document.getElementById('wishesContainer');
-      const wishItem = document.createElement('div');
-      wishItem.style.background = '#ffffff';
-      wishItem.style.border = '1px solid #e8decb';
-      wishItem.style.padding = '12px';
-      wishItem.style.borderRadius = '8px';
-      wishItem.style.marginBottom = '10px';
-      wishItem.innerHTML = `<strong style="color:var(--brown-text); display:block; font-size: 0.9rem;">${name}</strong><span style="font-size:0.85rem; color:#614328;">${text}</span>`;
-      
-      container.prepend(wishItem);
-      e.target.reset();
-    }
-  </script>
-</body>
-</html>
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 
