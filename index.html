@@ -1,4 +1,4 @@
-..<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -131,7 +131,7 @@
       width: 100vw;
       height: 100vh;
       background: #e8decb;
-      z-index: 2000;
+      z-index: 3000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -157,7 +157,6 @@
       border: 1px solid #e2d7c5;
     }
 
-    /* Envelope Top Flap Effect */
     .envelope-flap {
       background: #f7f0e4;
       padding: 40px 20px 30px;
@@ -166,7 +165,6 @@
       border-bottom: 1px solid #e2d7c5;
     }
 
-    /* Monogram styled like elegant AK Flourish Logo */
     .monogram-logo {
       font-family: var(--font-calligraphy);
       font-size: 3.8rem;
@@ -207,14 +205,16 @@
       background: var(--brown-btn);
       color: #ffffff;
       border: none;
-      padding: 12px 35px;
+      padding: 14px 40px;
       border-radius: 25px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-family: var(--font-sans);
       cursor: pointer;
       margin-top: 25px;
       box-shadow: 0 4px 12px rgba(92, 56, 24, 0.3);
       transition: transform 0.2s;
+      position: relative;
+      z-index: 3005;
     }
 
     .tap-open-btn:hover {
@@ -228,7 +228,7 @@
       border-radius: 50%;
       margin: -25px auto 20px;
       position: relative;
-      z-index: 5;
+      z-index: 3005;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -430,7 +430,6 @@
     .calendar-grid div { padding: 6px 0; }
     .calendar-grid .day-name { font-weight: 600; color: #8c6d53; }
     
-    /* Red Heart Shape for December 10 */
     .calendar-grid .selected-day-heart {
       background: #e63946;
       color: #ffffff;
@@ -518,251 +517,5 @@
   <div id="envelope-screen">
     <div class="envelope-card">
       <div class="envelope-flap">
-        <div class="monogram-logo">KN</div>
-        <div class="couple-names-cover">
-          Kotteswari
-          <span>AND</span>
-          Nandhakumar
-        </div>
-        <button class="tap-open-btn" onclick="openEnvelope()">Tap to open</button>
-      </div>
-      
-      <div class="wax-seal" onclick="openEnvelope()">
-        <i class="fas fa-leaf"></i>
-      </div>
-
-      <div class="envelope-bottom">
-        <div class="invite-text-cover">INVITE YOU TO CELEBRATE<br>OUR WEDDING DAY</div>
-        <div class="leaf-illustration">🌿</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN WEDDING INVITATION WEBSITE -->
-  <div class="app-container">
-
-    <!-- Header Section -->
-    <section>
-      <div class="monogram-logo">KN</div>
-      <p class="quote-box">"The universe was quietly working on this."</p>
-
-      <h1 class="couple-title">Kotteswari</h1>
-      <div class="weds-script">Weds</div>
-      <h1 class="couple-title">Nandhakumar</h1>
-
-      <!-- Countdown Pill -->
-      <div class="countdown-pill">
-        <div class="time-unit"><span id="days">00</span><small>DAYS</small></div>
-        <div class="time-unit"><span id="hours">00</span><small>HOURS</small></div>
-        <div class="time-unit"><span id="minutes">00</span><small>MINUTES</small></div>
-        <div class="time-unit"><span id="seconds">00</span><small>SECONDS</small></div>
-      </div>
-    </section>
-
-    <!-- Invitation Message -->
-    <section style="background-color: rgba(244, 236, 224, 0.85);">
-      <p style="font-size: 0.8rem; letter-spacing: 2px; color: #8c6d53; text-transform: uppercase;">WITH THE BLESSINGS OF OUR FAMILIES</p>
-      <p style="font-size: 0.95rem; margin-top: 8px; color: var(--brown-text);">With joyful hearts, we invite you to celebrate our wedding.</p>
-
-      <div style="margin-top: 30px;">
-        <div class="role-badge">THE BRIDE</div>
-        <h2 class="couple-title" style="font-size: 1.8rem;">Kotteswari</h2>
-        
-        <div style="margin: 20px 0; font-size: 1.5rem; color: var(--gold-accent);">✦</div>
-
-        <div class="role-badge">THE GROOM</div>
-        <h2 class="couple-title" style="font-size: 1.8rem;">Nandhakumar</h2>
-      </div>
-    </section>
-
-    <!-- Auto Scroll Photo Gallery Section -->
-    <section>
-      <h2 style="font-family: var(--font-serif); font-size: 2rem;">Our Gallery</h2>
-      
-      <div class="carousel-wrapper">
-        <div class="gallery-container" id="autoCarousel">
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Moment 1">
-          </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600" alt="Moment 2">
-          </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600" alt="Moment 3">
-          </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600" alt="Moment 4">
-          </div>
-          <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600" alt="Moment 5">
-          </div>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Events Section -->
-    <section style="background-color: rgba(244, 236, 224, 0.85);">
-      <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 20px;">Wedding Events</h2>
-
-      <!-- Reception -->
-      <div class="event-card">
-        <h3>🌸 Reception</h3>
-        <p class="event-date-text">
-          <strong>Wednesday, 09 December 2026</strong><br>
-          At 6:30 PM Onwards
-        </p>
-      </div>
-
-      <!-- Wedding Ceremony -->
-      <div class="event-card">
-        <h3>💍 Wedding Ceremony (Muhurtham)</h3>
-        <p class="event-date-text">
-          <strong>Thursday, 10 December 2026</strong><br>
-          7:30 AM – 9:00 AM
-        </p>
-      </div>
-
-      <!-- Calendar Highlight -->
-      <div class="calendar-box">
-        <div class="calendar-month">December 2026</div>
-        <div class="calendar-grid">
-          <div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div><div class="day-name">Su</div>
+        <div class="
           
-          <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-          <div>7</div><div>8</div><div>9</div><div class="selected-day-heart">10</div><div>11</div><div>12</div><div>13</div>
-          <div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
-          <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
-          <div>28</div><div>29</div><div>30</div><div>31</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RSVP Section -->
-    <section>
-      <h2 style="font-family: var(--font-serif); font-size: 2rem;">Confirm Your Attendance</h2>
-      <div class="form-card">
-        <form onsubmit="handleRSVP(event)">
-          <input type="text" class="form-input" id="guestName" placeholder="Your Name" required>
-          <select class="form-input" id="attendance">
-            <option value="Yes">Yes, I will attend</option>
-            <option value="No">Sorry, I can't make it</option>
-          </select>
-          <button type="submit" class="submit-btn">SEND RSVP</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Venue Location Section -->
-    <section style="background-color: rgba(244, 236, 224, 0.85);">
-      <h2 style="font-family: var(--font-serif); font-size: 2rem;">Venue Location</h2>
-      <h3 style="font-family: var(--font-serif); color: var(--gold-accent); margin-top: 10px;">GRK MANDAPAM</h3>
-      <p style="font-size: 0.9rem; color: #614328;">Guduvanchery</p>
-
-      <div class="map-box">
-        <iframe src="https://maps.google.com/maps?q=GRK+Thirumana+Mandapam+Guduvanchery&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-      </div>
-
-      <a href="https://maps.google.com/?q=GRK+Thirumana+Mandapam+Guduvanchery" target="_blank" style="text-decoration:none;">
-        <button class="tap-open-btn" style="margin-top:0;"><i class="fas fa-location-arrow"></i> View Map Directions</button>
-      </a>
-    </section>
-
-    <!-- Guestbook Section -->
-    <section>
-      <h2 style="font-family: var(--font-serif); font-size: 2rem;">Guestbook & Wishes</h2>
-      <div class="form-card">
-        <form onsubmit="addWish(event)">
-          <input type="text" class="form-input" id="wishName" placeholder="Your Name" required>
-          <textarea class="form-input" id="wishText" rows="3" placeholder="Write your blessings..." required></textarea>
-          <button type="submit" class="submit-btn">SEND WISHES</button>
-        </form>
-      </div>
-
-      <div id="wishesContainer" style="margin-top: 20px; text-align: left;"></div>
-    </section>
-
-  </div>
-
-  <script>
-    const audio = document.getElementById('bg-audio');
-
-    // Open Envelope & Trigger Petal Burst Animation
-    function openEnvelope() {
-      document.getElementById('envelope-screen').classList.add('opened');
-      createPetalShower();
-      audio.play().catch(() => {});
-      window.scrollTo(0, 0);
-    }
-
-    // Floral Petal Animation Generator
-    function createPetalShower() {
-      const container = document.getElementById('petal-container');
-      const colors = ['#ffb7c5', '#ff9aa2', '#ffdac1', '#e27d60', '#f4acb7'];
-      
-      for (let i = 0; i < 40; i++) {
-        setTimeout(() => {
-          const petal = document.createElement('div');
-          petal.className = 'petal';
-          
-          const size = Math.random() * 12 + 8;
-          petal.style.width = `${size}px`;
-          petal.style.height = `${size * 1.4}px`;
-          petal.style.left = `${Math.random() * 100}vw`;
-          petal.style.background = colors[Math.floor(Math.random() * colors.length)];
-          petal.style.animationDuration = `${Math.random() * 3 + 3.5}s`;
-          
-          container.appendChild(petal);
-
-          setTimeout(() => petal.remove(), 7000);
-        }, i * 120);
-      }
-    }
-
-    // Toggle Music
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
-
-    // Auto Scrolling Carousel Functionality
-    const carousel = document.getElementById('autoCarousel');
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
-    const totalItems = document.querySelectorAll('.gallery-item').length;
-
-    function autoScrollGallery() {
-      currentIndex = (currentIndex + 1) % totalItems;
-      const itemWidth = carousel.querySelector('.gallery-item').offsetWidth + 15;
-      carousel.scrollTo({
-        left: itemWidth * currentIndex,
-        behavior: 'smooth'
-      });
-
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-    }
-
-    setInterval(autoScrollGallery, 3000);
-
-    // Live Countdown Timer
-    function updateCountdown() {
-      const wedding = new Date("2026-12-10T07:30:00+05:30").getTime();
-      const now = new Date().getTime();
-      let distance = wedding - now;
-
-      if (distance < 0) distance = 0;
-
-      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 
