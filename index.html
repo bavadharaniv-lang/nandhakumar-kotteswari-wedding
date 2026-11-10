@@ -1,368 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nandhakumar & Kotteswari | Wedding Invitation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kotteswari & Nandhakumar — Wedding Invitation</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #380707;
-    color: #ffe7b0;
-    font-family: Georgia, serif;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-.hero {
-    min-height: 100vh;
-    padding: 45px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background:
-    radial-gradient(circle, #8e2525 0%, #520909 55%, #260303 100%);
-    border: 9px double #d6a64d;
-}
-
-.ornament {
-    color: #eac16c;
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.small {
-    letter-spacing: 5px;
-    font-size: 12px;
-    color: #f4d99c;
-    margin: 15px;
-}
-
-h1 {
-    font-size: clamp(36px, 8vw, 65px);
-    color: #f7d78c;
-    font-weight: normal;
-    margin: 20px 0;
-    text-shadow: 2px 3px 10px #210000;
-}
-
-.amp {
-    font-size: 38px;
-    color: #fff0c5;
-    font-style: italic;
-}
-
-.subtitle {
-    font-size: 18px;
-    line-height: 1.8;
-    margin: 15px;
-}
-
-.gold-line {
-    width: 150px;
-    height: 2px;
-    background: #e9bd65;
-    margin: 20px auto;
-}
-
-button {
-    background: #e7c078;
-    color: #480707;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 15px;
-    margin-top: 25px;
-    cursor: pointer;
-    font-family: Georgia, serif;
-    letter-spacing: 1px;
-}
-
-button:hover {
-    background: #fff0c5;
-}
-
-#invitation {
-    display: none;
-    padding: 55px 20px;
-    animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(25px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-.section {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 35px 20px;
-    border: 1px solid #d6a64d;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.04);
-    box-shadow: 0 5px 25px #1d0000;
-}
-
-h2 {
-    color: #f4d28b;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.details {
-    font-size: 18px;
-    line-height: 2;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
-
-.time {
-    border: 1px solid #d6a64d;
-    padding: 15px 12px;
-    min-width: 70px;
-    border-radius: 8px;
-}
-
-.time span {
-    display: block;
-    font-size: 25px;
-    color: #f5d48b;
-}
-
-.time small {
-    font-size: 11px;
-}
-
-a {
-    color: #f6d58e;
-    text-decoration: none;
-}
-
-.petals {
-    position: fixed;
-    top: -30px;
-    color: #ffb6b6;
-    font-size: 22px;
-    pointer-events: none;
-    animation: fall linear infinite;
-    z-index: 5;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
+  <style>
+    :root {
+      --bg-red: #600808;
+      --card-red: #4a0404;
+      --gold: #f3c262;
+      --gold-light: #fbe6ad;
+      --text-white: #ffffff;
+      --text-gold: #f3c262;
+      --font-serif: 'Cinzel', serif;
+      --font-sans: 'Montserrat', sans-serif;
     }
-}
 
-footer {
-    padding: 35px 15px;
-    color: #f5d48b;
-    line-height: 2;
-}
-</style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #2b0000;
+      font-family: var(--font-sans);
+      color: var(--text-white);
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* Floating Music Equalizer Icon */
+    .music-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      background: var(--gold);
+      color: var(--bg-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      cursor: pointer;
+      z-index: 1001;
+      font-size: 1.2rem;
+    }
+
+    /* Container for Mobile view */
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      background: linear-gradient(180deg, #780a0a 0%, #4a0404 100%);
+      min-height: 100vh;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+      position: relative;
+      padding-bottom: 50px;
+      overflow: hidden;
+    }
+
+    /* Entrance Cover Screen */
+    #entrance-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #500505;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #entrance-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .cover-card {
+      width: 85%;
+      max-width: 380px;
+      background: linear-gradient(135deg, #700909, #380202);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    .heart-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gold);
+      color: var(--bg-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+
+    .cover-card h2 {
+      font-family: var(--font-serif);
+      color: var(--gold-light);
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    .cover-card .amp {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
+
+    .cover-card .date-text {
+      color: var(--gold);
+      font-size: 1rem;
+      margin: 20px 0 10px;
+      font-family: var(--font-serif);
+    }
+
+    .cover-card .invite-text {
+      color: #dfbf9f;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    .open-btn {
+      background: var(--gold);
+      color: var(--bg-red);
+      border: none;
+      padding: 12px 45px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(243, 194, 98, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .open-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 35px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .om-symbol {
+      color: var(--gold);
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      letter-spacing: 3px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .couple-title {
+      font-family: var(--font-serif);
+      color: var(--gold-light);
+      font-size: 2.2rem;
+      line-height: 1.3;
+    }
+
+    .role-badge {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: #cca462;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .event-header {
+      color: var(--gold);
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      margin-top: 20px;
+    }
+
+    .event-date-large {
+      font-size: 3.5rem;
+      font-family: var(--font-serif);
+      color: var(--gold-light);
+      font-weight: 700;
+      line-height: 1;
+      margin: 10px 0;
+    }
+
+    .event-details-text {
+      color: #dfbf9f;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Decorative Divider */
+    .gold-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 25px 0;
+      color: var(--gold);
+    }
+    .gold-divider::before, .gold-divider::after {
+      content: "";
+      height: 1px;
+      width: 60px;
+      background: var(--gold);
+      margin: 0 10px;
+      opacity: 0.5;
+    }
+
+    /* Photo Gallery Carousel */
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 15px;
+      padding: 15px 5px;
+      scrollbar-width: none;
+    }
+    .gallery-container::-webkit-scrollbar { display: none; }
+
+    .gallery-item {
+      flex: 0 0 80%;
+      scroll-snap-align: center;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Calendar Box */
+    .calendar-box {
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 20px 15px;
+      background: rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+
+    .calendar-month {
+      color: var(--gold);
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #e0d0c0;
+    }
+
+    .calendar-grid div {
+      padding: 6px 0;
+    }
+
+    .calendar-grid .day-name {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .calendar-grid .selected-day {
+      background: var(--gold);
+      color: var(--bg-red);
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    /* Card Forms */
+    .form-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(243, 194, 98, 0.3);
+      border-radius: 16px;
+      padding: 25px 20px;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .form-card h3 {
+      color: var(--gold);
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .form-card p {
+      color: #d1b89d;
+      font-size: 0.82rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+    }
+
+    .radio-option {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(243, 194, 98, 0.4);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: var(--text-white);
+      font-size: 0.9rem;
+    }
+
+    .radio-option input {
+      margin-right: 12px;
+      accent-color: var(--gold);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--bg-red);
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* Map Responsive Box */
+    .map-box {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      margin: 15px 0;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 220px;
+      border: 0;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="hero" id="cover">
-
-<div class="ornament">❀ ✧ ❀</div>
-
-<p class="small">WITH THE BLESSINGS OF OUR ELDERS</p>
-
-<div class="gold-line"></div>
-
-<p class="subtitle">Together with our families</p>
-
-<p class="small">REQUEST THE PLEASURE OF YOUR COMPANY</p>
-
-<h1>Nandhakumar</h1>
-
-<div class="amp">&</div>
-
-<h1>Kotteswari</h1>
-
-<div class="gold-line"></div>
-
-<p class="subtitle">ARE GETTING MARRIED</p>
-
-<p class="small">10 • DECEMBER • 2026</p>
-
-<div class="ornament">❀</div>
-
-<button onclick="openInvitation()">
-OPEN INVITATION ✨
-</button>
-
-</div>
-
-<div id="invitation">
-
-<p class="ornament">❀ ✧ ❀</p>
-
-<p class="small">TWO HEARTS • ONE BEAUTIFUL JOURNEY</p>
-
-<h1>Nandhakumar & Kotteswari</h1>
-
-<div class="gold-line"></div>
-
-<p class="subtitle">
-With immense joy and the blessings of our families,
-we invite you to celebrate our wedding.
-</p>
-
-<div class="section">
-
-<h2>💍 Wedding Ceremony</h2>
-
-<p class="details">
-THURSDAY<br>
-<strong>10 DECEMBER 2026</strong><br>
-7:30 AM – 9:00 AM
-</p>
-
-<div class="gold-line"></div>
-
-<h2>🌸 Reception</h2>
-
-<p class="details">
-WEDNESDAY<br>
-<strong>09 DECEMBER 2026</strong><br>
-6:30 PM onwards
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>📍 Venue</h2>
-
-<p class="details">
-<strong>GRK MANDAPAM</strong><br>
-Guduvanchery
-</p>
-
-<br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=GRK+Mandapam+Guduvanchery"
-target="_blank">
-<button>VIEW LOCATION 📍</button>
-</a>
-
-</div>
-
-<div class="section">
-
-<h2>❤️ Countdown to Our Wedding</h2>
-
-<div class="countdown">
-
-<div class="time">
-<span id="days">00</span>
-<small>DAYS</small>
-</div>
-
-<div class="time">
-<span id="hours">00</span>
-<small>HOURS</small>
-</div>
-
-<div class="time">
-<span id="minutes">00</span>
-<small>MINUTES</small>
-</div>
-
-<div class="time">
-<span id="seconds">00</span>
-<small>SECONDS</small>
-</div>
-
-</div>
-</div>
-
-<footer>
-
-<div class="ornament">❀ ✧ ❀</div>
-
-<p>
-Your presence and blessings<br>
-will make our celebration more special.
-</p>
-
-<h2>With Love ❤️</h2>
-
-<h2>Nandhakumar & Kotteswari</h2>
-
-<p>We can't wait to celebrate with you!</p>
-
-</footer>
-
-</div>
-
-<script>
-
-function openInvitation() {
-    document.getElementById("cover").style.display = "none";
-    document.getElementById("invitation").style.display = "block";
-    window.scrollTo(0,0);
-}
-
-function updateCountdown() {
-
-    const wedding = new Date("2026-12-10T07:30:00+05:30").getTime();
-    const now = new Date().getTime();
-
-    let distance = wedding - now;
-
-    if (distance < 0) distance = 0;
-
-    document.getElementById("days").innerText =
-    Math.floor(distance / (1000*60*60*24));
-
-    document.getElementById("hours").innerText =
-    Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-
-    document.getElementById("minutes").innerText =
-    Math.floor((distance % (1000*60*60))/(1000*60));
-
-    document.getElementById("seconds").innerText =
-    Math.floor((distance % (1000*60))/1000);
-}
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-
-function createPetal() {
-
-    const petal = document.createElement("div");
-
-    petal.className = "petals";
-    petal.innerHTML = "❀";
-
-    petal.style.left = Math.random()*100 + "vw";
-    petal.style.animationDuration = (5 + Math.random()*6) + "s";
-
-    document.body.appendChild(petal);
-
-    setTimeout(() => petal.remove(),11000);
-}
-
-setInterval(createPetal,500);
-
-</script>
-
+  <!-- Audio Player & Floating Control Button -->
+  <audio id="bg-audio" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+  
+  <div class="music-btn" onclick="toggleAudio()">
+    <i class="fas fa-bars-staggered"></i>
+  </div>
+
+  <!-- Opening Envelope / Entrance Cover Screen -->
+  <div id="entrance-screen">
+    <div class="cover-card">
+      <div class="heart-icon"><i class="fas fa-heart"></i></div>
+      <h2>Kotteswari</h2>
+      <div class="amp">&</div>
+      <h2>Nandhakumar</h2>
+      <div class="date-text">December 10, 2026</div>
+      <div class="invite-text">Cordially Invites</div>
+      <button class="open-btn" onclick="openInvitation()">Open</button>
+    </div>
+  </div>
+
+  <!-- Main Digital Card Layout -->
+  <div class="app-container">
+
+    <!-- Header Section -->
+    <section>
+      <div class="om-symbol">ॐ</div>
+      <div class="subtitle">SAVE THE DATE</div>
+      <h1 class="couple-title">Kotteswari<br><span style="font-size:1.5rem; color:var(--gold);">&</span><br>Nandhakumar</h1>
+    </section>
+
+    <!-- Reception Announcement -->
+    <section>
+      <div class="subtitle">WE JOYFULLY ANNOUNCE OUR WEDDING</div>
+      
+      <div style="margin: 20px 0;">
+        <h2 class="couple-title" style="font-size: 1.8rem;">Kotteswari</h2>
+        <div class="role-badge">BRIDE</div>
+        <div style="color:var(--gold); margin: 8px 0;">&</div>
+        <h2 class="couple-title" style="font-size: 1.8rem;">Nandhakumar</h2>
+        <div class="role-badge">GROOM</div>
+      </div>
+
+      <div class="gold-divider"><i class="fas fa-ring"></i></div>
+
+      <div class="event-header">RECEPTION</div>
+      <div class="event-details-text">AT 6:30 PM &nbsp;|&nbsp; WEDNESDAY</div>
+      <div class="event-date-large">09</div>
+      <div class="event-details-text">DECEMBER 2026</div>
+    </section>
+
+    <!-- Photo Gallery Slider -->
+    <section>
+      <div class="subtitle">PHOTO GALLERY</div>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Pre-wedding 1">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600" alt="Pre-wedding 2">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600" alt="Pre-wedding 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Wedding Date Details & Countdown Calendar -->
+    <section>
+      <div class="gold-divider"><i class="fas fa-calendar-alt"></i></div>
+      <div class="subtitle">WEDDING DATE</div>
+      <div class="event-details-text">THE CELEBRATION WILL TAKE PLACE AT:</div>
+      <div class="event-details-text" style="margin-top:5px;"><strong>7:30 AM &nbsp;|&nbsp; THURSDAY</strong></div>
+      <div class="event-date-large">10</div>
+      <div class="event-details-text">DECEMBER 2026</div>
+
+      <!-- Calendar Highlight -->
+      <div class="calendar-box">
+        <div class="calendar-month">December 2026</div>
+        <div class="calendar-grid">
+          <div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div><div class="day-name">Su</div>
+          
+          <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+          <div>7</div><div>8</div><div>9</div><div class="selected-day">10</div><div>11</div><div>12</div><div>13</div>
+          <div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+          <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
+          <div>28</div><div>29</div><div>30</div><div>31</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section>
+      <div class="form-card">
+        <h3>Confirm your attendance</h3>
+        <p>Your presence would be an honor. Please RSVP so we can prepare the warmest welcome for you.</p>
+        
+        <form onsubmit="handleRSVP(event)">
+          <input type="text" class="form-input" id="guestName" placeholder="Enter your name" required>
+          
+          <label class="radio-option">
+            <input type="radio" name="attendance" value="Yes" checked> I will attend
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="attendance" value="No"> Sorry, I can't make it
+          </label>
+          
+          <button type="submit" class="submit-btn">Confirm</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Venue & Map Section -->
+    <section>
+      <div class="subtitle">RECEPTION & WEDDING VENUE</div>
+      <h2 style="font-family: var(--font-serif); color: var(--gold-light); font-size: 1.3rem;">GRK MANDABAM GUDUVANCHERY</h2>
+      
+      <div class="map-box">
+        <iframe src="https://maps.google.com/maps?q=GRK+Thirumana+Mandapam+Guduvanchery&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+
+      <a href="https://maps.google.com/?q=GRK+Thirumana+Mandapam+Guduvanchery" target="_blank" class="open-btn" style="display:inline-block; text-decoration:none; margin-top:10px;">
+        <i class="fas fa-location-arrow"></i> Get directions
+      </a>
+    </section>
+
+    <!-- Guestbook Section -->
+    <section>
+      <div class="gold-divider"><i class="fas fa-comment-dots"></i></div>
+      <div class="subtitle">GUESTBOOK</div>
+      
+      <div class="form-card">
+        <form onsubmit="addWish(event)">
+          <input type="text" class="form-input" id="wishName" placeholder="Enter your name*" required>
+          <textarea class="form-input" id="wishText" rows="3" placeholder="Enter your wishes*" required></textarea>
+          <button type="submit" class="submit-btn">SEND WISHES</button>
+        </form>
+      </div>
+
+      <div id="wishesContainer" style="margin-top: 20px; text-align: left;">
+        <div style="text-align: center; color: #d1b89d; font-size: 0.9rem; margin-top: 15px;">
+          Your presence would be the greatest gift we could receive!
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+
+    function openInvitation() {
+      document.getElementById('entrance-screen').classList.add('hidden');
+      audio.play().catch(() => {});
+    }
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function handleRSVP(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      alert(`Thank you, ${name}! Your RSVP has been confirmed.`);
+      e.target.reset();
+    }
+
+    function addWish(e) {
+      e.preventDefault();
+      const name = document.getElementById('wishName').value;
+      const text = document.getElementById('wishText').value;
+      
+      const container = document.getElementById('wishesContainer');
+      const wishItem = document.createElement('div');
+      wishItem.style.background = 'rgba(255,255,255,0.08)';
+      wishItem.style.border = '1px solid rgba(243, 194, 98, 0.3)';
+      wishItem.style.padding = '12px';
+      wishItem.style.borderRadius = '8px';
+      wishItem.style.marginBottom = '10px';
+      wishItem.innerHTML = `<strong style="color:var(--gold); display:block;">${name}</strong><span style="font-size:0.85rem; color:#fff;">${text}</span>`;
+      
+      container.prepend(wishItem);
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
