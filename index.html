@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nandhakumar & Kotteswari | Wedding Invitation</title>
+
+<title>Nandhakumar ❤️ Kotteswari</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -13,181 +15,198 @@
 }
 
 body {
-    background: #380707;
-    color: #ffe7b0;
+    background: #310606;
+    color: #f8dfaa;
     font-family: Georgia, serif;
     text-align: center;
     overflow-x: hidden;
 }
 
-.hero {
+.cover {
     min-height: 100vh;
-    padding: 45px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 30px 15px;
     background:
-    radial-gradient(circle, #8e2525 0%, #520909 55%, #260303 100%);
-    border: 9px double #d6a64d;
+    radial-gradient(circle at center, #792020, #360606 75%);
 }
 
-.ornament {
-    color: #eac16c;
-    font-size: 35px;
-    margin-bottom: 20px;
+.frame {
+    width: 100%;
+    max-width: 650px;
+    min-height: 85vh;
+    border: 3px solid #d7ad60;
+    outline: 1px solid #d7ad60;
+    outline-offset: 7px;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.small {
-    letter-spacing: 5px;
-    font-size: 12px;
-    color: #f4d99c;
+.flower {
+    color: #edc77e;
+    font-size: 40px;
     margin: 15px;
+}
+
+.eyebrow {
+    letter-spacing: 4px;
+    font-size: 11px;
+    line-height: 2;
 }
 
 h1 {
-    font-size: clamp(36px, 8vw, 65px);
-    color: #f7d78c;
+    color: #f4d18a;
+    font-size: clamp(35px, 8vw, 62px);
     font-weight: normal;
     margin: 20px 0;
-    text-shadow: 2px 3px 10px #210000;
+    text-shadow: 0 0 15px #e6b65b55;
 }
 
 .amp {
-    font-size: 38px;
-    color: #fff0c5;
+    font-size: 36px;
     font-style: italic;
 }
 
-.subtitle {
-    font-size: 18px;
-    line-height: 1.8;
-    margin: 15px;
-}
-
-.gold-line {
-    width: 150px;
-    height: 2px;
-    background: #e9bd65;
-    margin: 20px auto;
-}
-
 button {
-    background: #e7c078;
-    color: #480707;
-    border: none;
+    background: linear-gradient(135deg, #f5d58e, #b78236);
+    color: #430707;
+    border: 1px solid #ffe4a7;
     padding: 15px 30px;
+    margin: 25px;
     border-radius: 30px;
-    font-size: 15px;
-    margin-top: 25px;
-    cursor: pointer;
     font-family: Georgia, serif;
+    font-size: 14px;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 button:hover {
-    background: #fff0c5;
+    transform: scale(1.05);
 }
 
-#invitation {
+#main {
     display: none;
-    padding: 55px 20px;
-    animation: fadeIn 2s ease;
+    animation: reveal 2s ease;
+    padding: 35px 15px;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(25px);}
-    to {opacity: 1; transform: translateY(0);}
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.section {
+.card {
     max-width: 600px;
     margin: 30px auto;
     padding: 35px 20px;
-    border: 1px solid #d6a64d;
+    border: 1px solid #d6ad65;
+    background: linear-gradient(145deg, #681717, #390707);
     border-radius: 12px;
-    background: rgba(255,255,255,0.04);
-    box-shadow: 0 5px 25px #1d0000;
+    box-shadow: 0 10px 30px #160000;
 }
 
 h2 {
-    color: #f4d28b;
-    font-size: 28px;
+    color: #f5d18b;
+    font-size: 27px;
     margin-bottom: 20px;
+}
+
+p {
+    line-height: 2;
 }
 
 .details {
     font-size: 18px;
-    line-height: 2;
+    line-height: 2.2;
+}
+
+.divider {
+    color: #e9bd70;
+    font-size: 25px;
+    margin: 20px;
 }
 
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 10px;
     margin-top: 25px;
 }
 
-.time {
-    border: 1px solid #d6a64d;
-    padding: 15px 12px;
+.box {
+    border: 1px solid #d6ad65;
+    padding: 15px 10px;
     min-width: 70px;
     border-radius: 8px;
 }
 
-.time span {
+.box span {
     display: block;
     font-size: 25px;
-    color: #f5d48b;
+    color: #ffdfa0;
 }
 
-.time small {
-    font-size: 11px;
+.box small {
+    font-size: 10px;
 }
 
 a {
-    color: #f6d58e;
-    text-decoration: none;
-}
-
-.petals {
-    position: fixed;
-    top: -30px;
-    color: #ffb6b6;
-    font-size: 22px;
-    pointer-events: none;
-    animation: fall linear infinite;
-    z-index: 5;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
+    color: #f5d18b;
 }
 
 footer {
-    padding: 35px 15px;
-    color: #f5d48b;
+    padding: 40px 10px;
     line-height: 2;
 }
+
+.petal {
+    position: fixed;
+    top: -30px;
+    z-index: 10;
+    pointer-events: none;
+    color: #f2b7a7;
+    animation: falling linear forwards;
+}
+
+@keyframes falling {
+    to {
+        transform: translateY(110vh) rotate(500deg);
+        opacity: 0;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="hero" id="cover">
+<!-- OPENING COVER -->
 
-<div class="ornament">❀ ✧ ❀</div>
+<div class="cover" id="cover">
 
-<p class="small">WITH THE BLESSINGS OF OUR ELDERS</p>
+<div class="frame">
 
-<div class="gold-line"></div>
+<div class="flower">❀ ✧ ❀</div>
 
-<p class="subtitle">Together with our families</p>
+<p class="eyebrow">
+WITH THE BLESSINGS OF OUR ELDERS
+</p>
 
-<p class="small">REQUEST THE PLEASURE OF YOUR COMPANY</p>
+<div class="divider">━━━━ ✦ ━━━━</div>
+
+<p>YOU ARE CORDIALLY INVITED TO CELEBRATE</p>
 
 <h1>Nandhakumar</h1>
 
@@ -195,46 +214,51 @@ footer {
 
 <h1>Kotteswari</h1>
 
-<div class="gold-line"></div>
+<div class="divider">━━━━ ✦ ━━━━</div>
 
-<p class="subtitle">ARE GETTING MARRIED</p>
+<p class="eyebrow">10 DECEMBER 2026</p>
 
-<p class="small">10 • DECEMBER • 2026</p>
+<div class="flower">❀</div>
 
-<div class="ornament">❀</div>
-
-<button onclick="openInvitation()">
-OPEN INVITATION ✨
+<button onclick="openCard()">
+OPEN YOUR INVITATION 💌
 </button>
 
 </div>
+</div>
 
-<div id="invitation">
+<!-- MAIN INVITATION -->
 
-<p class="ornament">❀ ✧ ❀</p>
+<div id="main">
 
-<p class="small">TWO HEARTS • ONE BEAUTIFUL JOURNEY</p>
+<div class="flower">❀ ✧ ❀</div>
+
+<p class="eyebrow">TWO HEARTS • ONE BEAUTIFUL JOURNEY</p>
 
 <h1>Nandhakumar & Kotteswari</h1>
 
-<div class="gold-line"></div>
-
-<p class="subtitle">
-With immense joy and the blessings of our families,
-we invite you to celebrate our wedding.
+<p>
+Together with our families, we invite you
+to share our happiness and bless our new beginning.
 </p>
 
-<div class="section">
+<div class="divider">✦ ❀ ✦</div>
+
+<div class="card">
 
 <h2>💍 Wedding Ceremony</h2>
 
 <p class="details">
 THURSDAY<br>
+9 December? 
+</p>
+
+<p class="details">
 <strong>10 DECEMBER 2026</strong><br>
 7:30 AM – 9:00 AM
 </p>
 
-<div class="gold-line"></div>
+<div class="divider">❀</div>
 
 <h2>🌸 Reception</h2>
 
@@ -246,16 +270,14 @@ WEDNESDAY<br>
 
 </div>
 
-<div class="section">
+<div class="card">
 
-<h2>📍 Venue</h2>
+<h2>📍 Wedding Venue</h2>
 
 <p class="details">
 <strong>GRK MANDAPAM</strong><br>
-Guduvanchery
+GUDUVANCHERY
 </p>
-
-<br>
 
 <a href="https://www.google.com/maps/search/?api=1&query=GRK+Mandapam+Guduvanchery"
 target="_blank">
@@ -264,49 +286,50 @@ target="_blank">
 
 </div>
 
-<div class="section">
+<div class="card">
 
-<h2>❤️ Countdown to Our Wedding</h2>
+<h2>⏳ Countdown to Our Wedding</h2>
 
 <div class="countdown">
 
-<div class="time">
+<div class="box">
 <span id="days">00</span>
 <small>DAYS</small>
 </div>
 
-<div class="time">
+<div class="box">
 <span id="hours">00</span>
 <small>HOURS</small>
 </div>
 
-<div class="time">
+<div class="box">
 <span id="minutes">00</span>
 <small>MINUTES</small>
 </div>
 
-<div class="time">
+<div class="box">
 <span id="seconds">00</span>
 <small>SECONDS</small>
 </div>
 
 </div>
+
 </div>
 
 <footer>
 
-<div class="ornament">❀ ✧ ❀</div>
+<div class="flower">❀ ✧ ❀</div>
+
+<h2>With Love & Blessings</h2>
 
 <p>
-Your presence and blessings<br>
-will make our celebration more special.
+Your presence will make our celebration
+even more special.
 </p>
 
-<h2>With Love ❤️</h2>
+<h2>Nandhakumar ❤️ Kotteswari</h2>
 
-<h2>Nandhakumar & Kotteswari</h2>
-
-<p>We can't wait to celebrate with you!</p>
+<p>Forever begins here.</p>
 
 </footer>
 
@@ -314,55 +337,67 @@ will make our celebration more special.
 
 <script>
 
-function openInvitation() {
-    document.getElementById("cover").style.display = "none";
-    document.getElementById("invitation").style.display = "block";
-    window.scrollTo(0,0);
+function openCard() {
+
+document.getElementById("cover").style.display = "none";
+
+document.getElementById("main").style.display = "block";
+
+window.scrollTo(0,0);
+
 }
 
-function updateCountdown() {
+function countdown() {
 
-    const wedding = new Date("2026-12-10T07:30:00+05:30").getTime();
-    const now = new Date().getTime();
+const date = new Date("2026-12-10T07:30:00+05:30").getTime();
 
-    let distance = wedding - now;
+const now = new Date().getTime();
 
-    if (distance < 0) distance = 0;
+let distance = date - now;
 
-    document.getElementById("days").innerText =
-    Math.floor(distance / (1000*60*60*24));
+if(distance < 0) distance = 0;
 
-    document.getElementById("hours").innerText =
-    Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+document.getElementById("days").innerText =
+Math.floor(distance / (1000*60*60*24));
 
-    document.getElementById("minutes").innerText =
-    Math.floor((distance % (1000*60*60))/(1000*60));
+document.getElementById("hours").innerText =
+Math.floor((distance % (1000*60*60*24))/(1000*60*60));
 
-    document.getElementById("seconds").innerText =
-    Math.floor((distance % (1000*60))/1000);
+document.getElementById("minutes").innerText =
+Math.floor((distance % (1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerText =
+Math.floor((distance % (1000*60))/1000);
+
 }
 
-setInterval(updateCountdown,1000);
-updateCountdown();
+setInterval(countdown,1000);
 
-function createPetal() {
+countdown();
 
-    const petal = document.createElement("div");
+function petals() {
 
-    petal.className = "petals";
-    petal.innerHTML = "❀";
+const p = document.createElement("div");
 
-    petal.style.left = Math.random()*100 + "vw";
-    petal.style.animationDuration = (5 + Math.random()*6) + "s";
+p.className = "petal";
 
-    document.body.appendChild(petal);
+p.innerHTML = "✿";
 
-    setTimeout(() => petal.remove(),11000);
+p.style.left = Math.random()*100 + "vw";
+
+p.style.animationDuration = (5 + Math.random()*5) + "s";
+
+p.style.fontSize = (12 + Math.random()*15) + "px";
+
+document.body.appendChild(p);
+
+setTimeout(() => p.remove(),10000);
+
 }
 
-setInterval(createPetal,500);
+setInterval(petals,500);
 
 </script>
 
 </body>
-  </html>
+</html>
