@@ -125,6 +125,13 @@
       justify-content: center;
       padding: 20px;
       cursor: pointer;
+      transition: transform 0.8s ease-in-out, opacity 0.8s ease;
+    }
+
+    #envelope-screen.opened {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
     }
 
     .envelope-card {
@@ -330,7 +337,7 @@
   </div>
 
   <!-- ENVELOPE OPENING COVER SCREEN -->
-  <div id="envelope-screen" onclick="openEnvelope()">
+  <div id="envelope-screen">
     <div class="envelope-card">
       <div class="envelope-flap">
         <div class="monogram-logo">KN</div>
@@ -339,7 +346,7 @@
           <span>AND</span>
           Nandhakumar
         </div>
-        <button class="tap-open-btn">Tap to open</button>
+        <button class="tap-open-btn" id="openBtn">Tap to open</button>
       </div>
       
       <div class="wax-seal">
@@ -491,7 +498,10 @@
     function openEnvelope() {
       const screen = document.getElementById('envelope-screen');
       if (screen) {
-        screen.style.display = 'none';
+        screen.classList.add('opened');
+        setTimeout(() => {
+          screen.style.display = 'none';
+        }, 800);
       }
       createPetalShower();
       if (audio) {
@@ -499,6 +509,14 @@
       }
       window.scrollTo(0, 0);
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const screen = document.getElementById('envelope-screen');
+      if (screen) {
+        screen.addEventListener('click', openEnvelope);
+        screen.addEventListener('touchstart', openEnvelope);
+      }
+    });
 
     function createPetalShower() {
       const container = document.getElementById('petal-container');
@@ -566,4 +584,36 @@
 
       if (daysEl) daysEl.innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
       if (hoursEl) hoursEl.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      if (minutesEl) minu
+      if (minutesEl) minutesEl.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      if (secondsEl) secondsEl.innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function handleRSVP(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      alert(`Thank you, ${name}! Your RSVP has been confirmed.`);
+      e.target.reset();
+    }
+
+    function addWish(e) {
+      e.preventDefault();
+      const name = document.getElementById('wishName').value;
+      const text = document.getElementById('wishText').value;
+      
+      const container = document.getElementById('wishesContainer');
+      const wishItem = document.createElement('div');
+      wishItem.style.background = '#ffffff';
+      wishItem.style.border = '1px solid #e8decb';
+      wishItem.style.padding = '12px';
+      wishItem.style.borderRadius = '8px';
+      wishItem.style.marginBottom = '10px';
+      wishItem.innerHTML = '<strong style="color:var(--brown-text); display:block; font-size: 0.9rem;">' + name + '</strong><span style="font-size:0.85rem; color:#614328;">' + text + '</span>';
+      
+      container.prepend(wishItem);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
