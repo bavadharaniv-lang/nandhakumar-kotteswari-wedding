@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kotteswari & Nandhakumar | Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --maroon: #35070c;
-  --red: #690e17;
-  --gold: #e8c16b;
-  --light-gold: #ffe6a0;
-  --cream: #fff0ce;
+  --wine: #360710;
+  --maroon: #650e1b;
+  --gold: #d9ae61;
+  --pale: #ffe9b6;
+  --cream: #fff4df;
 }
 
 * {
@@ -23,367 +24,554 @@
 }
 
 body {
-  background: #210307;
+  background: #210309;
   color: var(--cream);
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
 
-.page {
-  min-height: 100vh;
-  padding: 20px 12px 40px;
+button {
+  font-family: inherit;
+}
+
+/* BACKGROUND */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
   background:
-    radial-gradient(ellipse at center, #74151c 0%, #40080e 55%, #1e0205 100%);
-  position: relative;
-  overflow: hidden;
+    radial-gradient(ellipse at 50% 35%, #791b2b 0%, transparent 65%),
+    radial-gradient(circle at 15% 80%, #54101a, transparent 40%),
+    linear-gradient(145deg, #210309, #4a0914, #210309);
 }
 
-/* GOLDEN FRAME */
-
-.frame {
-  max-width: 850px;
-  margin: auto;
-  padding: 9px;
-  border: 3px double var(--gold);
-  outline: 1px solid #a77a32;
-  outline-offset: 5px;
+#invitation {
   position: relative;
-  background: linear-gradient(145deg, #651018, #31060b);
-  box-shadow: 0 0 35px #000, inset 0 0 30px #180205;
+  z-index: 1;
+  display: none;
+  padding: 25px 12px 45px;
+  animation: reveal 1.5s ease forwards;
 }
 
-.inner-frame {
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* OPENING COVER */
+
+#opening {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle, #761626, #370710 70%, #190207);
+  perspective: 1200px;
+  padding: 20px;
+}
+
+.envelope-area {
+  width: min(390px, 90vw);
+  text-align: center;
+}
+
+.envelope {
+  position: relative;
+  height: 250px;
+  background: linear-gradient(140deg, #9b2431, #500914);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 35px #000, 0 0 25px #b57c34;
+  overflow: visible;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
   border: 1px solid var(--gold);
-  min-height: 100%;
-  padding: 24px 14px 35px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #791523;
+}
+
+.envelope-flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(140deg, #b13c43, #680e1b);
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+  transform-origin: top;
+  transition: transform 1.2s ease;
+  z-index: 4;
+  border-top: 1px solid var(--gold);
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, #741522, #4b0911);
+  clip-path: polygon(0 100%, 0 35%, 50% 78%, 100% 35%, 100% 100%);
+  z-index: 5;
+}
+
+.seal {
+  position: absolute;
+  z-index: 6;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe8a8, #b77d30);
+  color: #64101b;
+  display: grid;
+  place-items: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  box-shadow: 0 0 15px #f1c878;
+}
+
+.open-title {
+  font-family: 'Cinzel', serif;
+  color: var(--pale);
+  letter-spacing: 4px;
+  margin: 25px 0 12px;
+  font-size: 13px;
+}
+
+.open-button {
+  border: 1px solid var(--gold);
+  color: var(--pale);
+  background: linear-gradient(120deg, #6b101d, #9b2631);
+  padding: 13px 30px;
+  letter-spacing: 3px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #a66d2d;
+}
+
+.open-button:active {
+  transform: scale(.96);
+}
+
+.opening-decoration {
+  color: var(--gold);
+  font-size: 23px;
+  margin: 15px;
+  letter-spacing: 8px;
+}
+
+#opening.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+#opening.opened {
+  animation: coverFade 1.5s ease 1.2s forwards;
+  pointer-events: none;
+}
+
+@keyframes coverFade {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* MAIN CARD */
+
+.card {
+  max-width: 780px;
+  margin: auto;
+  position: relative;
+  padding: 12px;
+  border: 3px double var(--gold);
+  outline: 1px solid #a67b3b;
+  outline-offset: 5px;
+  background: linear-gradient(150deg, #6a101b, #380710 65%, #5d101a);
+  box-shadow: 0 0 40px #000;
+}
+
+.card-inner {
+  border: 1px solid var(--gold);
+  padding: 30px 15px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-/* TEMPLE ENTRANCE */
+/* ORNAMENTAL FLORAL SVG */
 
-.temple {
-  position: relative;
-  padding: 18px 8px 25px;
-  border-left: 13px ridge #bd762d;
-  border-right: 13px ridge #bd762d;
-  border-top: 12px ridge #d69a42;
-  border-radius: 48% 48% 0 0 / 18% 18% 0 0;
-  background:
-    linear-gradient(90deg,
-      rgba(70,0,0,.7),
-      rgba(130,25,20,.25),
-      rgba(70,0,0,.7));
-  animation: entrance 2s ease-out both;
+.floral {
+  width: 100%;
+  max-width: 300px;
+  height: 75px;
+  display: block;
+  margin: 5px auto;
 }
 
-@keyframes entrance {
-  from { opacity: 0; transform: scale(.92); }
-  to { opacity: 1; transform: scale(1); }
+.floral path,
+.floral circle,
+.floral ellipse {
+  stroke: #e4bd73;
+  stroke-width: 1.3;
+  fill: none;
 }
 
-.temple::before,
-.temple::after {
-  content: "❋";
-  position: absolute;
-  top: 5px;
-  color: var(--gold);
-  font-size: 25px;
+.floral .leaf {
+  fill: #37633c;
+  stroke: #c5a05b;
 }
 
-.temple::before { left: 8px; }
-.temple::after { right: 8px; }
-
-.pillar {
-  position: absolute;
-  top: 60px;
-  bottom: 0;
-  width: 12px;
-  background: linear-gradient(90deg, #713018, #e1a34e, #7b3518);
-  border: 1px solid #f3cb77;
+.floral .flower {
+  fill: #fff0d6;
+  stroke: #d9ae61;
 }
 
-.pillar.left { left: -12px; }
-.pillar.right { right: -12px; }
-
-.om {
-  font-size: 43px;
-  color: var(--light-gold);
-  text-shadow: 0 0 18px #ffca53;
-  margin: 5px 0 15px;
-  animation: glow 2s infinite alternate;
+.floral .centre {
+  fill: #a52c32;
+  stroke: #f0c36e;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 8px #d79a36; }
-  to { text-shadow: 0 0 25px #ffe5a1, 0 0 40px #d69b3b; }
+.top-symbol {
+  font-size: 40px;
+  color: var(--pale);
+  text-shadow: 0 0 20px #e6b65f;
+  margin: 5px 0 18px;
 }
 
-.save-date {
+.small-heading {
   font-family: 'Cinzel', serif;
+  color: var(--pale);
   letter-spacing: 5px;
   font-size: 12px;
-  color: var(--light-gold);
-  margin-bottom: 18px;
+  margin: 12px 0 20px;
 }
 
 .names {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(45px, 9vw, 82px);
-  line-height: 1.2;
-  color: #ffdf91;
-  text-shadow: 0 3px 3px #3c0905, 0 0 18px #e4ad4e;
-  animation: reveal 2.5s ease both;
-}
-
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+  font-size: clamp(48px, 10vw, 85px);
+  line-height: 1.25;
+  color: #ffe1a0;
+  text-shadow: 0 0 15px #d6a24f;
+  margin: 12px 0;
 }
 
 .amp {
+  font-size: 40px;
   display: block;
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: #fff0c0;
-  margin: -4px 0;
+  color: #fff1cf;
 }
 
-.divider {
+.ornament {
   color: var(--gold);
-  font-size: 22px;
-  margin: 16px 0;
-  letter-spacing: 5px;
+  letter-spacing: 8px;
+  font-size: 19px;
+  margin: 18px 0;
 }
 
 .announcement {
   font-family: 'Cinzel', serif;
-  color: #ffe5a0;
-  letter-spacing: 2px;
   font-size: 12px;
+  letter-spacing: 2px;
   line-height: 2;
-  margin: 15px auto;
-  max-width: 400px;
+  color: var(--pale);
+  margin: 18px auto;
 }
 
-.message {
+.invite-text {
+  max-width: 450px;
+  margin: auto;
   font-size: 16px;
-  line-height: 1.8;
-  color: #ffe9c5;
-  padding: 8px;
+  line-height: 1.9;
+  color: #ffe9cc;
 }
 
-/* FLOWERS AND TEMPLE DECORATIONS */
+/* COUNTDOWN */
 
-.decor {
-  font-size: 23px;
+.countdown-section {
+  margin: 30px auto;
+  max-width: 520px;
+  padding: 22px 10px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
   letter-spacing: 3px;
-  margin: 12px 0;
+  color: var(--pale);
+  margin-bottom: 18px;
 }
 
-.hanging {
-  display: flex;
-  justify-content: space-around;
-  font-size: 26px;
-  margin: 5px 0 15px;
-  color: var(--gold);
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
-.garland {
-  font-size: 21px;
-  line-height: 1.6;
-  color: #fff1d3;
-  text-shadow: 0 0 8px #e9b65d;
+.time-box {
+  padding: 12px 3px;
+  border: 1px solid #b88b48;
+  background: rgba(20,0,0,.25);
 }
 
-.diyas {
-  display: flex;
-  justify-content: space-around;
-  font-size: 34px;
-  margin: 20px 0;
-  animation: glow 2s infinite alternate;
+.time-box strong {
+  display: block;
+  font-family: 'Cinzel', serif;
+  color: #ffe1a0;
+  font-size: clamp(20px, 5vw, 30px);
 }
 
-.kolam {
-  color: #fff1d1;
-  font-size: 30px;
-  letter-spacing: 4px;
-  margin: 15px 0;
-  text-shadow: 0 0 12px #e8c16b;
+.time-box span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #f1d6a2;
 }
 
-/* EVENT DETAILS */
+.countdown-message {
+  color: var(--pale);
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+/* EVENTS */
 
 .events {
-  margin: 25px auto;
-  max-width: 540px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  max-width: 550px;
+  margin: 25px auto;
 }
 
-.event-card {
+.event {
+  padding: 18px 8px;
   border: 1px solid var(--gold);
-  background: rgba(30, 0, 0, .35);
-  padding: 18px 10px;
-  box-shadow: inset 0 0 15px #7a3517;
+  background: rgba(35,0,0,.3);
 }
 
-.event-card h3 {
+.event h3 {
   font-family: 'Cinzel', serif;
-  font-size: 15px;
-  color: var(--light-gold);
-  margin-bottom: 10px;
+  color: #ffe1a0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
-.event-card p {
+.event p {
+  line-height: 1.9;
   font-size: 14px;
+}
+
+/* MAP */
+
+.venue {
+  margin: 25px auto;
+  max-width: 500px;
+  padding: 22px 12px;
+  border: 1px solid var(--gold);
+  background: rgba(25,0,0,.3);
+}
+
+.venue h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 3px;
+  color: var(--pale);
+  margin-bottom: 12px;
+}
+
+.venue p {
   line-height: 1.8;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 22px;
+  background: linear-gradient(120deg, #d6a453, #f5d58d);
+  color: #450811;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  border: 1px solid #fff0b7;
 }
 
 /* CALENDAR */
 
 .calendar-section {
-  max-width: 540px;
-  margin: 35px auto 20px;
-  padding: 20px 12px;
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 20px 10px;
   border: 1px solid var(--gold);
-  background: rgba(35, 0, 0, .5);
-  box-shadow: 0 0 20px #170103;
+  background: rgba(25,0,0,.35);
 }
 
-.calendar-heading {
+.calendar-month {
   font-family: 'Cinzel', serif;
-  color: var(--light-gold);
-  font-size: 23px;
+  font-size: 24px;
+  color: #ffe1a0;
   letter-spacing: 3px;
 }
 
 .calendar-year {
-  font-size: 15px;
-  color: #eac77e;
-  margin: 7px 0 18px;
+  color: #e4c17f;
+  margin: 6px 0 20px;
 }
 
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  align-items: center;
+  gap: 6px 2px;
 }
 
-.day-name {
-  color: #e8c16b;
+.weekday {
   font-family: 'Cinzel', serif;
-  font-size: 11px;
-  padding: 8px 0;
+  color: var(--gold);
+  font-size: 10px;
+  padding: 9px 0;
 }
 
 .date {
-  position: relative;
-  height: 42px;
+  height: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: 14px;
-  color: #fff0d3;
-  border-radius: 50%;
+  color: #fff0d9;
 }
 
-.date.special {
-  color: #4c0710;
-  font-weight: bold;
-  background: #ffe2a0;
-  clip-path: path("M 20 38 C 13 32 0 23 0 13 C 0 -1 17 -4 20 8 C 23 -4 40 -1 40 13 C 40 23 27 32 20 38 Z");
-  background: linear-gradient(135deg, #fff0b4, #dca343);
+.heart-date {
   width: 40px;
   height: 40px;
   margin: auto;
-  animation: heartBeat 1.5s infinite;
+  position: relative;
+  color: #530812;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  background: #f0c77b;
+  clip-path: path("M20 37 C15 32 0 22 0 13 C0 -2 17 -4 20 8 C23 -4 40 -2 40 13 C40 22 25 32 20 37 Z");
+  filter: drop-shadow(0 0 5px #e5b35b);
+  animation: pulse 1.5s infinite;
 }
 
-@keyframes heartBeat {
-  0%, 100% { transform: scale(1); }
+@keyframes pulse {
   50% { transform: scale(1.12); }
 }
 
-.heart-note {
-  margin-top: 15px;
-  color: #ffe1a0;
+.calendar-note {
+  margin-top: 18px;
+  color: var(--pale);
   font-size: 13px;
 }
 
 /* FOOTER */
 
 .footer {
-  margin-top: 28px;
-  color: #f5d58d;
   font-family: 'Cinzel', serif;
-  font-size: 12px;
+  color: #f2d18c;
   letter-spacing: 2px;
+  font-size: 11px;
   line-height: 2;
+  margin-top: 30px;
 }
 
-.music-btn {
+/* MUSIC */
+
+.music-button {
   position: fixed;
+  z-index: 20;
   bottom: 20px;
   right: 18px;
-  z-index: 10;
-  width: 53px;
-  height: 53px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 2px solid var(--gold);
-  background: #5d0c15;
-  color: #ffe5a0;
+  color: #ffe7ad;
+  background: #640f1a;
+  box-shadow: 0 0 15px #e4b55e;
   font-size: 22px;
-  box-shadow: 0 0 15px #e0a94b;
   cursor: pointer;
 }
 
-.music-btn.playing {
-  animation: spin 4s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
 @media(max-width: 480px) {
-  .inner-frame { padding: 18px 9px 25px; }
+  .card-inner { padding: 22px 9px; }
   .events { grid-template-columns: 1fr; }
-  .event-card { padding: 14px; }
-  .date { height: 38px; font-size: 13px; }
-  .calendar { gap: 2px; }
-  .day-name { font-size: 10px; }
-  .announcement { font-size: 10px; }
+  .date { height: 36px; }
+  .calendar { gap: 5px 0; }
+  .heart-date { width: 36px; height: 36px; }
+  .invite-text { font-size: 14px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="page">
-<div class="frame">
-<div class="inner-frame">
+<!-- OPENING ENVELOPE -->
 
-<div class="temple">
-<div class="pillar left"></div>
-<div class="pillar right"></div>
+<div id="opening">
+  <div class="envelope-area">
 
-<div class="hanging">
-  <span>🔔</span>
-  <span>🌺</span>
-  <span>🔔</span>
+    <div class="opening-decoration">✦ ❀ ✦</div>
+
+    <div class="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+      <div class="seal">K & N</div>
+    </div>
+
+    <div class="open-title">A WEDDING INVITATION</div>
+
+    <button class="open-button" onclick="openInvitation()">
+      OPEN INVITATION
+    </button>
+
+    <div class="opening-decoration">✦ ❀ ✦</div>
+
+  </div>
 </div>
 
-<div class="garland">
-  🌿 🌼 🌿 🌸 🌿 🌼 🌿
-</div>
 
-<div class="om">ॐ</div>
+<!-- MAIN INVITATION -->
 
-<div class="save-date">SAVE THE DATE</div>
+<main id="invitation">
+
+<div class="card">
+<div class="card-inner">
+
+<svg class="floral" viewBox="0 0 300 75">
+  <path d="M10 60 Q150 -10 290 60"/>
+  <path d="M40 48 Q15 15 5 30 Q20 55 40 48"/>
+  <path d="M260 48 Q285 15 295 30 Q280 55 260 48"/>
+  <path d="M85 35 Q65 5 55 17 Q60 40 85 35"/>
+  <path d="M215 35 Q235 5 245 17 Q240 40 215 35"/>
+  <ellipse class="leaf" cx="35" cy="40" rx="18" ry="7" transform="rotate(30 35 40)"/>
+  <ellipse class="leaf" cx="265" cy="40" rx="18" ry="7" transform="rotate(-30 265 40)"/>
+  <circle class="flower" cx="150" cy="22" r="9"/>
+  <circle class="flower" cx="137" cy="28" r="7"/>
+  <circle class="flower" cx="163" cy="28" r="7"/>
+  <circle class="centre" cx="150" cy="27" r="4"/>
+</svg>
+
+<div class="top-symbol">ॐ</div>
+
+<div class="small-heading">SAVE THE DATE</div>
 
 <div class="names">
   Kotteswari
@@ -391,52 +579,82 @@ body {
   Nandhakumar
 </div>
 
-<div class="divider">❖ ✦ ❖ ✦ ❖</div>
+<div class="ornament">❖ ✦ ❖ ✦ ❖</div>
 
 <div class="announcement">
   WE JOYFULLY ANNOUNCE OUR WEDDING
 </div>
 
-<div class="message">
-  With the blessings of our families<br>
-  and the love of our dear ones,<br>
-  we invite you to celebrate<br>
-  our beautiful beginning.
-</div>
+<p class="invite-text">
+  With the blessings of our families and the love
+  of our dear ones, we invite you to join us as
+  we begin our beautiful journey together.
+</p>
 
-<div class="decor">
-  🌺 🌿 🤍 🌿 🌺
-</div>
+<svg class="floral" viewBox="0 0 300 75">
+  <path d="M10 38 Q150 90 290 38"/>
+  <path d="M40 45 Q20 70 10 55"/>
+  <path d="M260 45 Q280 70 290 55"/>
+  <ellipse class="leaf" cx="55" cy="49" rx="17" ry="7"/>
+  <ellipse class="leaf" cx="245" cy="49" rx="17" ry="7"/>
+  <circle class="flower" cx="150" cy="48" r="9"/>
+  <circle class="flower" cx="137" cy="42" r="7"/>
+  <circle class="flower" cx="163" cy="42" r="7"/>
+  <circle class="centre" cx="150" cy="44" r="4"/>
+</svg>
 
-<div class="kolam">
-  ❖ ✧ ◈ ✧ ❖
-</div>
 
-<div class="diyas">
-  <span>🪔</span>
-  <span>🪔</span>
-</div>
+<!-- COUNTDOWN -->
 
-<div class="garland">
-  🌿 🌸 🌼 🌸 🌿
-</div>
+<section class="countdown-section">
 
-</div>
+  <div class="section-title">COUNTING DOWN TO OUR BIG DAY</div>
 
-<!-- WEDDING EVENTS -->
+  <div class="countdown">
 
-<div class="divider">✦ ✦ ✦</div>
+    <div class="time-box">
+      <strong id="days">00</strong>
+      <span>DAYS</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="hours">00</strong>
+      <span>HOURS</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="minutes">00</strong>
+      <span>MINUTES</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="seconds">00</strong>
+      <span>SECONDS</span>
+    </div>
+
+  </div>
+
+  <div class="countdown-message">
+    Until we say "I Do" ♥
+  </div>
+
+</section>
+
+
+<!-- EVENT DETAILS -->
+
+<div class="ornament">✦ ❖ ✦</div>
 
 <div class="events">
 
-  <div class="event-card">
+  <div class="event">
     <h3>RECEPTION</h3>
     <p>Wednesday</p>
     <p>09 December 2026</p>
     <p>6:30 PM onwards</p>
   </div>
 
-  <div class="event-card">
+  <div class="event">
     <h3>WEDDING</h3>
     <p>Thursday</p>
     <p>10 December 2026</p>
@@ -445,30 +663,43 @@ body {
 
 </div>
 
-<div class="event-card" style="max-width:540px;margin:auto;">
-  <h3>VENUE</h3>
+
+<!-- VENUE AND MAP -->
+
+<div class="venue">
+
+  <h3>THE VENUE</h3>
+
   <p>GRK Mandapam</p>
   <p>Guduvanchery</p>
+
+  <a
+    class="map-button"
+    href="https://www.google.com/maps/search/?api=1&query=GRK+Mandapam+Guduvanchery"
+    target="_blank"
+    rel="noopener">
+    GET DIRECTIONS ↗
+  </a>
+
 </div>
 
-<!-- DECEMBER CALENDAR -->
+
+<!-- DECEMBER 2026 CALENDAR -->
 
 <div class="calendar-section">
 
-  <div class="calendar-heading">DECEMBER</div>
+  <div class="calendar-month">DECEMBER</div>
   <div class="calendar-year">2026</div>
 
   <div class="calendar">
 
-    <div class="day-name">SUN</div>
-    <div class="day-name">MON</div>
-    <div class="day-name">TUE</div>
-    <div class="day-name">WED</div>
-    <div class="day-name">THU</div>
-    <div class="day-name">FRI</div>
-    <div class="day-name">SAT</div>
-
-    <!-- December 1 begins on Tuesday -->
+    <div class="weekday">SUN</div>
+    <div class="weekday">MON</div>
+    <div class="weekday">TUE</div>
+    <div class="weekday">WED</div>
+    <div class="weekday">THU</div>
+    <div class="weekday">FRI</div>
+    <div class="weekday">SAT</div>
 
     <div></div>
     <div></div>
@@ -483,7 +714,7 @@ body {
     <div class="date">7</div>
     <div class="date">8</div>
     <div class="date">9</div>
-    <div class="date special">10</div>
+    <div class="heart-date">10</div>
     <div class="date">11</div>
     <div class="date">12</div>
 
@@ -511,56 +742,79 @@ body {
 
   </div>
 
-  <div class="heart-note">
-    ♥ 10th December 2026 — Our Special Day ♥
+  <div class="calendar-note">
+    ♥ 10 December 2026 — Our Special Day ♥
   </div>
 
 </div>
 
-<div class="kolam">✧ ❖ ✧ ❖ ✧</div>
+
+<svg class="floral" viewBox="0 0 300 75">
+  <path d="M10 45 Q150 0 290 45"/>
+  <ellipse class="leaf" cx="55" cy="35" rx="17" ry="7"/>
+  <ellipse class="leaf" cx="245" cy="35" rx="17" ry="7"/>
+  <circle class="flower" cx="150" cy="28" r="10"/>
+  <circle class="flower" cx="136" cy="35" r="7"/>
+  <circle class="flower" cx="164" cy="35" r="7"/>
+  <circle class="centre" cx="150" cy="33" r="4"/>
+</svg>
 
 <div class="footer">
   TWO HEARTS · ONE BEAUTIFUL JOURNEY<br>
   YOUR PRESENCE IS OUR BLESSING
 </div>
 
-<div class="decor">
-  🌺 🤍 🌺 🤍 🌺
 </div>
+</div>
+</main>
 
-</div>
-</div>
-</div>
 
-<!-- MUSIC BUTTON -->
+<!-- MUSIC -->
 
-<audio id="weddingMusic" loop>
+<audio id="music" loop>
   <source src="wedding-music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-btn" id="musicButton" onclick="toggleMusic()">
-  ♪
+<button class="music-button" id="musicButton"
+  onclick="toggleMusic()" aria-label="Toggle music">
+  ♫
 </button>
 
+
 <script>
-const music = document.getElementById("weddingMusic");
-const button = document.getElementById("musicButton");
 
-function toggleMusic() {
-  if (music.paused) {
-    music.play().then(() => {
-      button.classList.add("playing");
-      button.innerHTML = "♫";
-    }).catch(() => {
-      alert("Please upload wedding-music.mp3 to your GitHub repository first.");
-    });
-  } else {
-    music.pause();
-    button.classList.remove("playing");
-    button.innerHTML = "♪";
-  }
+// OPEN ENVELOPE
+
+function openInvitation() {
+  const opening = document.getElementById("opening");
+
+  opening.classList.add("opened");
+
+  document.getElementById("invitation").style.display = "block";
+
+  setTimeout(() => {
+    opening.style.display = "none";
+  }, 2800);
 }
-</script>
 
-</body>
-</html>
+
+// LIVE COUNTDOWN
+
+const weddingDate = new Date(
+  "2026-12-10T07:30:00+05:30"
+).getTime();
+
+function updateCountdown() {
+
+  const now = Date.now();
+  const difference = weddingDate - now;
+
+  if (difference <= 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(
