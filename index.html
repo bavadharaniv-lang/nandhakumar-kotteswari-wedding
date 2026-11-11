@@ -677,3 +677,261 @@
         <h3>💍 Wedding Ceremony (Muhurtham)</h3>
         <p class="event-date-text">
           <strong>Th
+                      <strong>Thursday, 10 December 2026</strong><br>
+          7:30 AM – 9:00 AM
+        </p>
+      </div>
+
+      <!-- CALENDAR MATCHING REFERENCE IMAGE 3 -->
+      <div class="royal-calendar-frame">
+        <div class="calendar-header-title">December 2026</div>
+        <div class="calendar-divider-line"></div>
+        
+        <div class="calendar-grid-royal">
+          <div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div><div class="day-name">Su</div>
+          
+          <div class="calendar-cell"></div>
+          <div class="calendar-cell">1</div>
+          <div class="calendar-cell">2</div>
+          <div class="calendar-cell">3</div>
+          <div class="calendar-cell">4</div>
+          <div class="calendar-cell">5</div>
+          <div class="calendar-cell">6</div>
+          <div class="calendar-cell">7</div>
+          <div class="calendar-cell">8</div>
+          <div class="calendar-cell">9</div>
+          <div class="calendar-cell"><div class="heart-highlight">10</div></div>
+          <div class="calendar-cell">11</div>
+          <div class="calendar-cell">12</div>
+          <div class="calendar-cell">13</div>
+          <div class="calendar-cell">14</div>
+          <div class="calendar-cell">15</div>
+          <div class="calendar-cell">16</div>
+          <div class="calendar-cell">17</div>
+          <div class="calendar-cell">18</div>
+          <div class="calendar-cell">19</div>
+          <div class="calendar-cell">20</div>
+          <div class="calendar-cell">21</div>
+          <div class="calendar-cell">22</div>
+          <div class="calendar-cell">23</div>
+          <div class="calendar-cell">24</div>
+          <div class="calendar-cell">25</div>
+          <div class="calendar-cell">26</div>
+          <div class="calendar-cell">27</div>
+          <div class="calendar-cell">28</div>
+          <div class="calendar-cell">29</div>
+          <div class="calendar-cell">30</div>
+          <div class="calendar-cell">31</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold-accent);">Confirm Your Attendance</h2>
+      <div class="form-card">
+        <form onsubmit="handleRSVP(event)">
+          <input type="text" class="form-input" id="guestName" placeholder="Your Name" required>
+          <select class="form-input" id="attendance">
+            <option value="Yes">Yes, I will attend</option>
+            <option value="No">Sorry, I can't make it</option>
+          </select>
+          <button type="submit" class="submit-btn">SEND RSVP</button>
+        </form>
+      </div>
+    </section>
+
+    <section style="background-color: rgba(44, 3, 6, 0.65);">
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold-accent);">Venue Location</h2>
+      <h3 style="font-family: var(--font-serif); color: var(--gold-text); margin-top: 10px;">GRK MANDAPAM</h3>
+      <p style="font-size: 0.9rem; color: var(--gold-text);">Guduvanchery</p>
+
+      <div class="map-box">
+        <iframe src="https://maps.google.com/maps?q=GRK+Thirumana+Mandapam+Guduvanchery&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+      </div>
+
+      <a href="https://maps.google.com/?q=GRK+Thirumana+Mandapam+Guduvanchery" target="_blank" style="text-decoration:none;">
+        <button class="tap-open-btn" style="margin-top:0;"><i class="fas fa-location-arrow"></i> View Map Directions</button>
+      </a>
+    </section>
+
+    <section>
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold-accent);">Guestbook & Wishes</h2>
+      <div class="form-card">
+        <form onsubmit="addWish(event)">
+          <input type="text" class="form-input" id="wishName" placeholder="Your Name" required>
+          <textarea class="form-input" id="wishText" rows="3" placeholder="Write your blessings..." required></textarea>
+          <button type="submit" class="submit-btn">SEND WISHES</button>
+        </form>
+      </div>
+
+      <div id="wishesContainer" style="margin-top: 20px; text-align: left;"></div>
+
+      <!-- ENDING MESSAGE -->
+      <div class="ending-message">
+        "Your presence would be the greatest gift we would receive."
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+
+    function openEnvelope() {
+      const screen = document.getElementById('envelope-screen');
+      if (screen) {
+        screen.classList.add('opened');
+        setTimeout(() => {
+          screen.style.display = 'none';
+        }, 800);
+      }
+      createPetalShower();
+      if (audio) {
+        audio.play().catch(() => {});
+      }
+      window.scrollTo(0, 0);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const screen = document.getElementById('envelope-screen');
+      if (screen) {
+        screen.addEventListener('click', openEnvelope);
+        screen.addEventListener('touchstart', openEnvelope);
+      }
+      update3DCarousel();
+    });
+
+    function createPetalShower() {
+      const container = document.getElementById('petal-container');
+      const colors = ['#f3c262', '#ffb7c5', '#ff9aa2', '#ffd700', '#fce8ad'];
+      
+      for (let i = 0; i < 40; i++) {
+        setTimeout(() => {
+          const petal = document.createElement('div');
+          petal.className = 'petal';
+          
+          const size = Math.random() * 12 + 8;
+          petal.style.width = size + 'px';
+          petal.style.height = (size * 1.4) + 'px';
+          petal.style.left = (Math.random() * 100) + 'vw';
+          petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+          petal.style.animationDuration = (Math.random() * 3 + 3.5) + 's';
+          
+          container.appendChild(petal);
+
+          setTimeout(() => petal.remove(), 7000);
+        }, i * 120);
+      }
+    }
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    /* 3D OVERLAPPING CAROUSEL LOGIC */
+    let current3DIndex = 0;
+    const cards3D = document.querySelectorAll('.carousel-3d-card');
+    const dots3D = document.querySelectorAll('.dot');
+    const total3DCards = cards3D.length;
+
+    function update3DCarousel() {
+      cards3D.forEach((card, index) => {
+        card.className = 'carousel-3d-card';
+        if (index === current3DIndex) {
+          card.classList.add('active');
+        } else if (index === (current3DIndex - 1 + total3DCards) % total3DCards) {
+          card.classList.add('prev');
+        } else if (index === (current3DIndex + 1) % total3DCards) {
+          card.classList.add('next');
+        } else if (index === (current3DIndex - 2 + total3DCards) % total3DCards) {
+          card.classList.add('far-prev');
+        } else {
+          card.classList.add('far-next');
+        }
+      });
+
+      dots3D.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === current3DIndex);
+      });
+    }
+
+    function setSlide(index) {
+      current3DIndex = index;
+      update3DCarousel();
+    }
+
+    setInterval(() => {
+      current3DIndex = (current3DIndex + 1) % total3DCards;
+      update3DCarousel();
+    }, 3500);
+
+    /* Touch Swipe for Carousel */
+    let startX = 0;
+    const stage = document.getElementById('carouselStage');
+    if (stage) {
+      stage.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+      stage.addEventListener('touchend', e => {
+        let diffX = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX > 0) {
+            current3DIndex = (current3DIndex + 1) % total3DCards;
+          } else {
+            current3DIndex = (current3DIndex - 1 + total3DCards) % total3DCards;
+          }
+          update3DCarousel();
+        }
+      });
+    }
+
+    function updateCountdown() {
+      const wedding = new Date("2026-12-10T07:30:00+05:30").getTime();
+      const now = new Date().getTime();
+      let distance = wedding - now;
+
+      if (distance < 0) distance = 0;
+
+      const daysEl = document.getElementById("days");
+      const hoursEl = document.getElementById("hours");
+      const minutesEl = document.getElementById("minutes");
+      const secondsEl = document.getElementById("seconds");
+
+      if (daysEl) daysEl.innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      if (hoursEl) hoursEl.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      if (minutesEl) minutesEl.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      if (secondsEl) secondsEl.innerText = Math.floor((distance % (1000 * 60)) / 100
+    (distance % (1000 * 60)) / 1000);
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function handleRSVP(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      alert(`Thank you, ${name}! Your RSVP has been confirmed.`);
+      e.target.reset();
+    }
+
+    function addWish(e) {
+      e.preventDefault();
+      const name = document.getElementById('wishName').value;
+      const text = document.getElementById('wishText').value;
+      
+      const container = document.getElementById('wishesContainer');
+      const wishItem = document.createElement('div');
+      wishItem.style.background = 'rgba(0,0,0,0.5)';
+      wishItem.style.border = '1px solid rgba(243, 194, 98, 0.4)';
+      wishItem.style.padding = '12px';
+      wishItem.style.borderRadius = '8px';
+      wishItem.style.marginBottom = '10px';
+      wishItem.innerHTML = '<strong style="color:var(--gold-accent); display:block; font-size: 0.9rem;">' + name + '</strong><span style="font-size:0.85rem; color:var(--gold-text);">' + text + '</span>';
+      
+      container.prepend(wishItem);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
