@@ -492,20 +492,26 @@
     }
 
     /* PERFECT VISIBLE GOLDEN HEART WITH BOLD NUMBER 10 */
-    .heart-highlight {
-      position: relative;
-      width: 36px;
-      height: 36px;
-      background-color: #f3c262;
-      clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+        .heart-highlight {
+      width: 34px;
+      height: 34px;
+      background: #f3c262;
+      color: #3b0509;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #3b0509;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
       font-weight: 900;
       font-size: 0.85rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
     }
+
+    .heart-highlight span {
+      transform: rotate(45deg);
+      display: inline-block;
+    }
+    
 
     .form-card {
       background: rgba(59, 5, 9, 0.85);
@@ -674,6 +680,8 @@
       </div>
 
       <!-- CALENDAR WITH CLEARLY VISIBLE NUMBER 10 ON HEART -->
+      
+      
       <div class="royal-calendar-frame">
         <div class="calendar-header-title">December 2026</div>
         <div class="calendar-divider-line"></div>
@@ -691,7 +699,7 @@
           <div class="calendar-cell">7</div>
           <div class="calendar-cell">8</div>
           <div class="calendar-cell">9</div>
-          <div class="calendar-cell"><div class="heart-highlight">10</div></div>
+          <div class="calendar-cell"><div class="calendar-cell"><div class="calendar-cell"><div class="heart-highlight"><span>10</span></div></div>
           <div class="calendar-cell">11</div>
           <div class="calendar-cell">12</div>
           <div class="calendar-cell">13</div>
