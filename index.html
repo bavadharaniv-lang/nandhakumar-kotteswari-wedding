@@ -116,12 +116,12 @@
       opacity: 0.4;
     }
 
-    /* ================= LOGO DESIGN ================= */
+    /* ================= LOGO DESIGN (WITHOUT LEAVES) ================= */
     .logo-container {
       position: relative;
       width: 130px;
-      height: 130px;
-      margin: 0 auto 20px;
+      height: 110px;
+      margin: 0 auto 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -136,15 +136,6 @@
       border-left-color: transparent;
       border-bottom-color: transparent;
       transform: rotate(-35deg);
-    }
-
-    .logo-leaf-branch {
-      position: absolute;
-      bottom: 8px;
-      left: 2px;
-      font-size: 1.6rem;
-      color: var(--gold-accent);
-      transform: rotate(-15deg);
     }
 
     .logo-text-group {
@@ -344,7 +335,7 @@
     .event-card h3 { font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-accent); margin-bottom: 10px; }
     .event-date-text { font-size: 0.95rem; color: var(--gold-text); line-height: 1.8; }
 
-    /* ================= 3D CARD OVERLAP PHOTO CAROUSEL ================= */
+    /* ================= 3D CARD OVERLAP PHOTO CAROUSEL (FASTER AUTO-SCROLL) ================= */
     .carousel-section-title {
       font-family: var(--font-cinzel);
       font-size: 1.5rem;
@@ -440,7 +431,7 @@
       transform: scale(1.4);
     }
 
-    /* ================= ROYAL GOLD CALENDAR ================= */
+    /* ================= ROYAL GOLD CALENDAR (CLEARLY VISIBLE NUMBER 10) ================= */
     .royal-calendar-frame {
       background: rgba(59, 5, 9, 0.9);
       border: 2.5px solid var(--gold-accent);
@@ -493,28 +484,27 @@
     }
 
     .calendar-cell {
-      height: 34px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
     }
 
-    /* SOLID GOLD HEART HIGHLIGHT */
+    /* PERFECT VISIBLE GOLDEN HEART WITH BOLD NUMBER 10 */
     .heart-highlight {
-      width: 32px;
-      height: 32px;
+      position: relative;
+      width: 36px;
+      height: 36px;
       background-color: #f3c262;
       clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #3b0509 !important;
-      font-weight: 800;
+      color: #3b0509;
+      font-weight: 900;
       font-size: 0.85rem;
-      transform: scale(1.15);
-      margin: 0 auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
     }
 
     .form-card {
@@ -551,6 +541,7 @@
 
   <div id="petal-container"></div>
 
+  <!-- Audio: Sada Nannu by Charulatha Mani -->
   <audio id="bg-audio" loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
@@ -564,10 +555,9 @@
     <div class="envelope-card">
       <div class="envelope-flap">
         
-        <!-- LOGO -->
+        <!-- LOGO (NO LEAVES) -->
         <div class="logo-container">
           <div class="logo-circle-arc"></div>
-          <div class="logo-leaf-branch">🌿</div>
           <div class="logo-text-group">
             <span class="logo-k">K</span>
             <span class="logo-amp">&</span>
@@ -584,12 +574,12 @@
       </div>
       
       <div class="wax-seal">
-        <i class="fas fa-leaf"></i>
+        <i class="fas fa-heart"></i>
       </div>
 
       <div class="envelope-bottom">
         <div class="invite-text-cover">INVITE YOU TO CELEBRATE<br>OUR WEDDING DAY</div>
-        <div style="color:var(--gold-accent); font-size:1.4rem;">🌿</div>
+        <div style="color:var(--gold-accent); font-size:1.2rem;">✦</div>
       </div>
     </div>
   </div>
@@ -598,10 +588,9 @@
   <div class="app-container">
 
     <section>
-      <!-- LOGO -->
+      <!-- LOGO (NO LEAVES) -->
       <div class="logo-container">
         <div class="logo-circle-arc"></div>
-        <div class="logo-leaf-branch">🌿</div>
         <div class="logo-text-group">
           <span class="logo-k">K</span>
           <span class="logo-amp">&</span>
@@ -638,16 +627,22 @@
       </div>
     </section>
 
-    <!-- 3D OVERLAPPING PHOTO GALLERY (6 PHOTOS) -->
+    <!-- 3D OVERLAPPING PHOTO GALLERY (6 PHOTOS - REPLACE src WITH YOUR GALLERY IMAGES) -->
     <section>
       <div class="carousel-section-title">PHOTO GALLERY</div>
       
       <div class="carousel-3d-stage" id="carouselStage">
+        <!-- Photo 1 -->
         <div class="carousel-3d-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Photo 1"></div>
+        <!-- Photo 2 -->
         <div class="carousel-3d-card"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600" alt="Photo 2"></div>
+        <!-- Photo 3 -->
         <div class="carousel-3d-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600" alt="Photo 3"></div>
+        <!-- Photo 4 -->
         <div class="carousel-3d-card"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600" alt="Photo 4"></div>
+        <!-- Photo 5 -->
         <div class="carousel-3d-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600" alt="Photo 5"></div>
+        <!-- Photo 6 -->
         <div class="carousel-3d-card"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=600" alt="Photo 6"></div>
       </div>
 
@@ -675,14 +670,14 @@
 
       <div class="event-card">
         <h3>💍 Wedding Ceremony (Muhurtham)</h3>
-        <p class="event-date-text">
-          <strong>Th
-                      <strong>Thursday, 10 December 2026</strong><br>
+        <p class="event
+          <class="event-date-text">
+          <strong>Thursday, 10 December 2026</strong><br>
           7:30 AM – 9:00 AM
         </p>
       </div>
 
-      <!-- CALENDAR MATCHING REFERENCE IMAGE 3 -->
+      <!-- CALENDAR WITH CLEARLY VISIBLE NUMBER 10 ON HEART -->
       <div class="royal-calendar-frame">
         <div class="calendar-header-title">December 2026</div>
         <div class="calendar-divider-line"></div>
@@ -832,7 +827,7 @@
       }
     }
 
-    /* 3D OVERLAPPING CAROUSEL LOGIC */
+    /* 3D OVERLAPPING CAROUSEL LOGIC (FASTER 2.2s INTERVAL) */
     let current3DIndex = 0;
     const cards3D = document.querySelectorAll('.carousel-3d-card');
     const dots3D = document.querySelectorAll('.dot');
@@ -867,7 +862,7 @@
     setInterval(() => {
       current3DIndex = (current3DIndex + 1) % total3DCards;
       update3DCarousel();
-    }, 3500);
+    }, 2200);
 
     /* Touch Swipe for Carousel */
     let startX = 0;
@@ -902,8 +897,7 @@
       if (daysEl) daysEl.innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
       if (hoursEl) hoursEl.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       if (minutesEl) minutesEl.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      if (secondsEl) secondsEl.innerText = Math.floor((distance % (1000 * 60)) / 100
-    (distance % (1000 * 60)) / 1000);
+      if (secondsEl) secondsEl.innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
