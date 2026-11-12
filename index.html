@@ -782,7 +782,17 @@
   <script>
     const audio = document.getElementById('bg-audio');
 
-    function openEnvelope() {
+function toggleAudio() {
+  if (audio) {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+}
+
+function openEnvelope() {
       const screen = document.getElementById('envelope-screen');
       if (screen) {
         screen.classList.add('opened');
